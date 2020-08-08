@@ -1,0 +1,97 @@
+doctype html
+html(lang='en')
+    head
+        title Alumn|Not Only Studetns
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='/static/bower_components/bootstrap/dist/css/bootstrap.css')
+        link( href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;800&display=swap" rel="stylesheet")
+        style
+            include ../static/css/style.css
+            include ../static/css/style1.css
+            include ../static/css/login_style.css
+            include ../static/css/register_style.css
+            include ../static/css/ourstories.css
+    body
+        nav.navbar.navbar-expand-lg.navbar-light
+          .container
+            a.navbar-brand(href='/') 
+              img(src="../static/img/logo.png")
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+              span.navbar-toggler-icon
+            #navbarSupportedContent.collapse.navbar-collapse
+              ul.navbar-nav.mr-auto.ml-4
+                li.nav-item.active
+                  a.nav-link(href='/') Home
+                li.nav-item
+                  a.nav-link(href='/forum') Forum
+                li.nav-item.dropdown
+                  a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                    | More
+                  .dropdown-menu(aria-labelledby='navbarDropdown')
+                    if user
+                      a.dropdown-item(href="/ourstories/add") Add Info
+                      a.dropdown-item(href="/users/logout") Logout
+                    else
+                      a.dropdown-item(href="/users/register") Register
+                li.nav-item
+              form.form-inline.my-2.my-lg-0(action="/ourstories",id='searchForm',method='POST')
+                input.form-control.mr-sm-2(type='text', placeholder='Search', aria-label='Search',name='fltrname')
+                button.btn.btn-outline-success.my-2.my-sm-0(type='submit',name='submit') Search
+        .container
+            != messages('message', locals)
+            if errors
+                each error, i in errors
+                    div(class="alert alert-danger") #{error.msg}
+        h1.heading Alumni Search
+        //- form.form-horizontal(action="/ourstories",id='searchForm',method='POST')
+        //-   .col-md-3 
+        //-     label.col-md-12.control-label(for="name") By Company
+        //-     .col-md-12
+        //-       input.form-control#searchname(type='text',name='fltrname',placeholder='Enter company')
+        //-     .col-md-12
+        //-       input.form-control.btn.btn-primary(name='submit',type='submit')
+        div.list-box.container.mt-5.mb-5
+          ul.list-group
+            each ourstory,i in ourstories
+              li.list-group-item
+                a(href="/ourstories/"+ourstory._id)= ourstory.name
+        br
+        script.
+          $(function(){
+            $("#searchname").autocomplete({
+              source: function(req,res){
+                $.ajax({
+                    url:"/ourstories/",
+                    dataType:"jsonp",
+                    type:"GET",
+                    data: req,
+                    success: function(data){
+                    res(data);
+                    },
+                    error: function(err){
+                    console.log(err.status);
+                    }
+                });
+              },
+              minLength: 1,
+              select: function(event,ui){
+              if(ui.item){
+                $("#searchname").text(ui.item.label);
+              }
+              }
+            });
+          });
+    footer.container-fluid.text-center
+            div.row 
+                div.col-sm-4
+                    h3 Contact us 
+                    h4 our address here
+                div.col-sm-4
+                    h3 our social network
+                    a.fa.fa-facebook(href="#")
+                div.col-sm-4
+                    img.icon(src="../static/img/logo.png")
+    script(src='/static/bower_components/jquery/dist/jquery.js')
+    script(src='/static/bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='/static/js/index.js')

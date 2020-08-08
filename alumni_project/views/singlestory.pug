@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    .container.mt-5.mb-5 
+        h1 Hello,My Name is
+        h2.myname= ourstories.name
+        hr
+        h4 About:-
+        p  #{ourstories.body}
+        .formbox
+            h3 Personal Details
+            form
+                .input-group
+                    h4 Email         :
+                    input(type='email', value= ourstories.email)
+                .input-group
+                    h4 Company:
+                    input(type='text', value= ourstories.currentcomp)
+                .input-group
+                    h4 Placed:
+                    input(type='text', value= ourstories.oldcomp)
+                .input-group
+                    h4 Skills:
+                    input(type='text', value= ourstories.skills)
+                .input-group
+                    h4 Passsed out in year:
+                    input(type='text', value= ourstories.year)
+        //- h4 Email  #{ourstories.email}
+        //- h4 Working #{ourstories.currentcomp}
+        //- h4 City #{ourstories.location}
+        //- h4 Old Company #{ourstories.oldcomp}
+        //- h4 Skills #{ourstories.skills}
+        //- h4 Year Passesd out #{ourstories.year}
+        h4 written by #{author}
+        hr
+        if user
+            if user.id==ourstories.author
+                a.btn.btn-warning(href='/ourstories/edit/'+ourstories._id) Edit
+                a.btn.btn-danger.delete-ourstories(href='#',data-id=ourstories._id) Delete

@@ -1,0 +1,37 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.jumbotron{
+    text-align: center;
+    font-family: 'Baloo Tammudu 2', cursive;
+    background-image: url(/static/img/jumbotron.png);
+}
+.heading{
+    font-weight:800;
+    text-align: center;
+}
+.section1 .row{
+  align-items: center;
+}
+
+.card-text{
+    font-family: 'Baloo Tammudu 2', cursive;
+    text-align: center;
+    height: 60px;
+    padding-top: 4px;
+    line-height: 1;
+    margin-top: -60px;
+    border-radius: 5px;
+    background-color: #3b60c9;
+    position: relative;
+}
+
+/* paragraph */
+
+.section2{
+    font-family: 'Baloo Tammudu 2', cursive;
+    background-color: #e2f0ef;
+    /* border-radius: 5px; */
+}

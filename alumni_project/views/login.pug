@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    br  
+    br
+    .container
+        h1 login
+        form.form(method="POST",action='/users/login')
+            .form-group
+                label(for='exampleInputEmail1') username
+                input#exampleInputEmail1.form-control(type='text', name="username")
+            .form-group
+                label(for='exampleInputPassword1') Password
+                input#exampleInputPassword1.form-control(type='password',name='password')
+            button.btn.btn-primary(type='submit') Submit

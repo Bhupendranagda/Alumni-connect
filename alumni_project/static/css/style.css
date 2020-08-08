@@ -1,0 +1,129 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Baloo Tammudu 2', cursive;
+}
+
+.alert-error {
+    color: #a94442;
+    background-color: #f3dede;
+    border-color: #ebccd1;
+}
+
+.alert-success_msg {
+    color: 3c763d;
+    background-color: #dff08d;
+    border-color: #d639c6;
+}
+
+.navbar {
+    background-color: #23415C;
+    padding: 1% 0;
+    font-size: 1.2rem;
+}
+
+.navbar .navbar-nav li a {
+    color: #d5d5d5;
+}
+
+.navbar .navbar-nav li a:hover,
+.navbar .navbar-nav li a.active {
+    color: #ffffff;
+}
+
+.navbar-brand {
+    height: 40px;
+    padding: 0 15px 5px;
+}
+
+.navbar-brand img {
+    height: 50px;
+    padding-bottom: 10px;
+}
+
+#home {
+    background: url(/static/img/bg-1.jpeg) no-repeat center center fixed;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    display: table;
+    width: 100%;
+    padding-top: 100px;
+}
+
+.landing-txt {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.landing-txt h1 {
+    font-size: 500%;
+    font-weight: 700;
+}
+
+.padding {
+    padding: 80px 0;
+}
+
+
+/* .padding img {
+    width: 100%;
+} */
+
+.container1 img {
+    width: 100%;
+}
+
+.container3 img {
+    width: 100%;
+}
+
+.container2 img {
+    width: 80%;
+}
+
+#fixed {
+    background: url(/static/img/background.jpg) no-repeat center center fixed;
+    height: 60%;
+    position: relative;
+    display: table;
+    background-size: cover;
+    width: 100%;
+}
+
+footer {
+    background-color: #23415C;
+    padding: 5% 5% 10% 5%;
+    width: 100%;
+    color: #ffffff;
+}
+
+.icon {
+    max-width: 200px;
+}
+
+.img-responsibility {
+    height: 150px;
+}
+
+@media (max-width:768px) {
+    .landing-txt h1 {
+        font-size: 300%;
+    }
+    .icon {
+        max-width: 50px;
+    }
+}
+
+@media (max-width:768px) {
+    .conatiner2 h4 {
+        text-align: center;
+    }
+}

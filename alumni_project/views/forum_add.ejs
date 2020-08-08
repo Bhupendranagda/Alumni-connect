@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+    <link rel='stylesheet' , href='/static/bower_components/bootstrap/dist/css/bootstrap.css'>
+    <link rel="stylesheet" href="/static/css/forum.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;800&display=swap" rel="stylesheet">
+    <title>Alumni| NOT ONLY STUDENTS</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/"><img src="../static/img/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav text-center ml-auto">
+                    <li class="nav-item">
+                        <a class=" nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <%if(user){%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/logout">Logout</a>
+                    </li>
+                    <% } else { %>
+                    <li class="nav-item">
+                        <a class=" nav-link" href="/users/login">Login</a>
+                    </li>
+                    <%}%>    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="list-box container mt-5 mb-5">
+        <h1 class="heading">All Post</h1>
+        <% for(var i=0; i < data.length > 0; i++) {%>
+                    <div class="card mb-5">
+                        <h5 class="card-header">
+                            <%= data[i].title%>
+                        </h5>
+                        <div class="card-body">
+                            <p><%= data[i].body%></p>
+                            <form action="/forum/download/<%= data[i]._id %>" method="GET">
+                                <input id="download" type="submit" value="Download">
+                            </form>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+            <div class="container"></div>
+                <a href="/forum/create" class="btn btn-warning btn-lg">
+                    <span class="glyphicon glyphicon-plus"></span> ADD
+                </a>
+        </div>
+        <br>
+        <br>
+        <script src='/static/bower_components/jquery/dist/jquery.js'></script>
+        <script src='/static/bower_components/bootstrap/dist/js/bootstrap.js'></script>
+        <script src='/static/js/index.js'></script>

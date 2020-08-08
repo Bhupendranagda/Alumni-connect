@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    .container
+        h1 #{title}
+        form.form(method='POST',action='/ourstories/edit/'+ourstories._id)
+            .form-group
+                label(for='exampleInputEmail1') Name
+                input#exampleInputEmail1.form-control(name='name',type='text', value=ourstories.name)
+            .form-group
+                label(for='exampleInputPassword1') Year Of Pass Out
+                input#exampleInputPassword1.form-control(type='text',  value=ourstories.year,name='year')    
+            .form-group
+                label(for='currentcompany') Current Company
+                input#currentcompany.form-control(name='currentcomp',type='text', placeholder='Enter current company',value=ourstories.currentcomp)    
+            .form-group
+                label(for='oldcompany') Old Company
+                input#oldcompany.form-control(name='oldcomp',type='text', placeholder='Enter old company',value=ourstories.oldcomp)
+            .form-group
+                label(for='exampleInputBody1') Body
+                textarea.form-control(name="body")= ourstories.body
+            button.btn.btn-primary(type='submit',value='submit') Submit

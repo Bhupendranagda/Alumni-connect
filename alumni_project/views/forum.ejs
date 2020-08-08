@@ -1,0 +1,75 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' , href='/static/bower_components/bootstrap/dist/css/bootstrap.css'>
+    <link rel="stylesheet" href="/static/css/forum.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;800&display=swap" rel="stylesheet">
+    <title>Alumni | NOT ONLY STUDENTS</title>
+</head>
+
+<body>
+    <!-- <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" data-toggle='collapse' data-target='#navbarid'>
+                <span class="navbar-toggler-icon"></span>
+                <div class="collapse navbar-collapse" id="navbarid">
+                    <ul class="navbar-nav text-center ml-auto">
+                        <li class="nav-item">
+                            <a href="/" class="active nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/" class="active nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/" class="active nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/" class="active nav-link">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </button>
+
+        </div>
+    </nav> -->
+    <br>
+    <br>
+    <div class="container">
+        <h2 class="heading">Add Your Post</h2>
+        <form action="/forum/create" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="titlepost"> Title</label>
+                <input type="text" name="title" id="titlepost" class="form-control">
+            </div>
+            <div class="form-group .col-sm-12">
+                <label for="body"> Body</label><br>
+                <textarea name="body" id="bodycontent" cols="50" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="file" name="pic"><br>
+            </div>
+            <input type="submit" value="Upload">
+        </form><br><br><br><br>
+        <!-- <div class="list-box container mt-5 mb-5">
+            <h1 class="heading">All Post</h1>
+            <% for(var i=0; i < data.length > 0; i++) {%>
+            <div class="card mb-5">
+                <h5 class="card-header">
+                    <%= data[i].title%>
+                </h5>
+                <div class="card-body">
+                    <p><%= data[i].body%></p>
+                    <form action="/forum/download/<%= data[i]._id %>" method="GET">
+                        <input id="download" type="submit" value="Download">
+                    </form>
+                </div>
+            </div>
+            <% } %>
+        </div> -->
+    </div>
+</body>
+
+</html>

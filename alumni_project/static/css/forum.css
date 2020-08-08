@@ -1,0 +1,48 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Baloo Tammudu 2', cursive;
+    background-color: lightblue;
+}
+
+.heading{
+    font-weight:800;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.navbar-brand img {
+    height: 50px;
+    padding-bottom: 10px;
+}
+.navbar {
+    background-color: #23415C;
+    padding: 0% 0;
+    font-size: 1.2rem;
+}
+
+.navbar .navbar-nav li a {
+    color: #d5d5d5;
+}
+
+.navbar .navbar-nav  a:hover,
+.navbar .navbar-nav  a.active {
+    color: #ffffff;
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+    color: #ffffff;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #d5d5d5;
+}
+
+.navbar-light .navbar-nav .nav-link :hover {
+    color: #ffffff;
+}

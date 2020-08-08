@@ -1,0 +1,62 @@
+doctype html
+html(lang='en')
+    head
+        title Alumn|Not Only Studetns
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='/static/bower_components/bootstrap/dist/css/bootstrap.css')
+        link( href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;800&display=swap" rel="stylesheet")
+        style
+            include ../static/css/style.css
+            include ../static/css/login_style.css
+            include ../static/css/register_style.css
+            include ../static/css/ourstories.css
+            include ../static/css/singlestory.css
+    body
+        nav.navbar.navbar-expand-sm.navbar-dark.fixed-top
+            .container
+                button.navbar-toggler(data-toggle='collapse' data-target='#navbarid')
+                    span.navbar-toggler-icon
+                a.navbar-brand(href="/")
+                    img(src="../static/img/logo.png") 
+                div.collapse.navbar-collapse#navbarid
+                    ul.navbar-nav.text-center.ml-auto 
+                        li.nav-item
+                            a.active.nav-link(href="/") Home    
+                        li.nav-item
+                            a.active.nav-link(href="/forum") Forum
+                        li.nav-item
+                            a.nav-link(href="/about") About Us
+                        if user
+                            li.nav-item
+                                a.nav-link(href="/ourstories") Alumni
+                        if user 
+                            li.nav-item
+                                a.nav-link(href="/users/logout") Logout
+                        else
+                            li.nav-item
+                                a.nav-link(href="/users/login") Login  
+                            li.nav-item
+                                a.nav-link(href="/users/register") Register
+        br
+        br
+        br
+        .container
+            != messages('message', locals)
+            if errors
+                each error, i in errors
+                    div(class="alert alert-danger") #{error.msg}
+        block content
+        footer.container-fluid.text-center
+            div.row 
+                div.col-sm-4
+                    h3 Contact us 
+                    h4 our address here
+                div.col-sm-4
+                    h3 our social network
+                    a.fa.fa-facebook(href="#")
+                div.col-sm-4
+                    img.icon(src="../static/img/logo.png")
+        script(src='/static/bower_components/jquery/dist/jquery.js')
+        script(src='/static/bower_components/bootstrap/dist/js/bootstrap.js')
+        script(src='/static/js/index.js')

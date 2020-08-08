@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    .container
+        form.form(method='POST',action='/ourstories/add')
+            .form-group
+                label(for='exampleInputEmail') Name
+                input#exampleInputEmail.form-control(name='name',type='text', placeholder='Enter Name')
+            .form-group
+                label(for='exampleInputEmail1') Email
+                input#exampleInputEmail1.form-control(name='email',type='email', placeholder='Enter Email')
+            .form-group
+                label(for='currentcompany') Current Company
+                input#currentcompany.form-control(name='currentcomp',type='text', placeholder='Enter current company')
+            .form-group
+                label(for='Location') Location
+                input#Location.form-control(name='location',type='text', placeholder='Enter Location')
+            .form-group
+                label(for='oldcompany') Old Company
+                input#oldcompany.form-control(name='oldcomp',type='text', placeholder='Enter old company')
+            .form-group
+                label(for='skills') Skills 
+                input#skills.form-control(name='skills',type='text', placeholder='Enter old techinal skills')
+            .form-group
+                label(for='exampleInputPassword1') Graduation Year
+                input#exampleInputPassword1.form-control(type='text', placeholder='Enter year',name='year')   
+            .form-group
+                label(for='exampleInputBody1') About 
+                textarea.form-control#exampleInputBody1(name='body')
+            button.btn.btn-primary(type='submit',value='submit') Submit

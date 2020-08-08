@@ -1,0 +1,117 @@
+doctype html
+html(lang='en')
+    head
+        title Alumn|Not Only Studetns
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='/static/bower_components/bootstrap/dist/css/bootstrap.css')
+        link( href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;800&display=swap" rel="stylesheet")
+        style
+            include ../static/css/style.css
+            include ../static/css/ourstories.css
+            include ../static/css/about.css
+    body
+        nav.navbar.navbar-expand-sm.navbar-dark.fixed-top
+            .container
+                button.navbar-toggler(data-toggle='collapse' data-target='#navbarid')
+                    span.navbar-toggler-icon
+                a.navbar-brand(href="/")
+                    img(src="../static/img/logo.png") 
+                div.collapse.navbar-collapse#navbarid
+                    ul.navbar-nav.text-center.ml-auto 
+                        li.nav-item
+                            a.active.nav-link(href="/") Home    
+                        li.nav-item
+                            a.active.nav-link(href="/forum") Forum
+                        li.nav-item
+                            a.nav-link(href="/about") About Us
+                        if user
+                            li.nav-item
+                                a.nav-link(href="/ourstories") Add Stories
+                        if user 
+                            li.nav-item
+                                a.nav-link(href="/users/logout") Logout
+                        else
+                            li.nav-item
+                                a.nav-link(href="/users/login") Login  
+                            li.nav-item
+                                a.nav-link(href="/users/register") Register
+        br
+        br
+        br
+        .jumbotron
+            h1.display-4.heading About US
+            p.lead
+                | Alumni Needs enables you to harness the power of your alumni network .Whatever may be the need.
+            p.lead
+                a.btn.btn-primary.btn-lg(href='#section1', role='button') Lets See           
+        section.section2.container
+            .row
+                .col
+                    img(src="../static/img/courosel_1.jpg", height="400", width="320")
+                .col.para1
+                    h1.heading ESTD of This Alumni Association
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis harum quibusdam quo fugit optio corporis eveniet magnam necessitatibus fugiat, facere nam voluptatibus minima exercitationem inventore numquam iure, iusto iste ad. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, voluptatum! Quo, fugiat? Harum nisi numquam eligendi dolorem porro voluptatum aut explicabo mollitia laboriosam cum! Deleniti consequuntur sunt accusamus laborum commodi.
+        br
+        hr
+        section.section1.container#section1
+            h1.display-5.heading Our Honorable Committe 
+            div.row
+                .col-xs-12.col-sm-4
+                    .card
+                    img.card-img-top(src='../static/img/commitee-1.jpg', alt='Card image cap')
+                    .card-body
+                        div.card-text
+                            h5.card-title BRYAN WATSHON
+                            p President
+                .col-xs-12.col-sm-4
+                    .card
+                    img.card-img-top(src='../static/img/commitee-2.jpg', alt='Card image cap')
+                    .card-body
+                        div.card-text
+                            h5.card-title CARLOS HELU
+                            p Vice President
+                .col-xs-12.col-sm-4
+                    .card
+                    img.card-img-top(src='../static/img/commitee-5.jpg', alt='Card image cap')
+                    .card-body
+                         div.card-text
+                            h5.card-title BRYAN WATSHON
+                            p Asst Secretary
+            div.row
+                .col-xs-12.col-sm-4
+                    .card
+                    img.card-img-top(src='../static/img/commitee-6.jpg', alt='Card image cap')
+                    .card-body
+                         div.card-text
+                            h5.card-title ALEX TUNTUNI
+                            p Office Secretary
+                .col-xs-12.col-sm-4
+                    .card
+                    img.card-img-top(src='../static/img/commitee-7.jpg', alt='Card image cap')
+                    .card-body
+                         div.card-text
+                            h5.card-title MAL MUHIT
+                            p Finance Member
+                .col-xs-12.col-sm-4
+                    .card
+                    img.card-img-top(src='../static/img/commitee-8.jpg', alt='Card image cap')
+                    .card-body
+                         div.card-text
+                            h5.card-title PRINCE RIMON
+                            p Committee Member
+        br
+        br
+        footer.container-fluid.text-center
+            div.row 
+                div.col-sm-4
+                    h3 Contact us 
+                    h4 our address here
+                div.col-sm-4
+                    h3 our social network
+                    a.fa.fa-facebook(href="#")
+                div.col-sm-4
+                    img.icon(src="../static/img/logo.png")
+        script(src='/static/bower_components/jquery/dist/jquery.js')
+        script(src='/static/bower_components/bootstrap/dist/js/bootstrap.js')
+        script(src='/static/js/index.js')

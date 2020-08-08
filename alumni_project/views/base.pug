@@ -1,0 +1,79 @@
+doctype html
+html(lang='en')
+  head
+    title Bootstrap Example
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
+    style
+      include ../static/css/style.css
+  body
+      nav.navbar.navbar-expand-sm.navbar-dark.fixed-top
+        div.container
+          button.navbar-toggler(data-toggle='collapse' data-target='#navbarid')
+            span.navbar-toggler-icon
+          a.navbar-brand(href="#")
+            img(src="../static/img/logo.png") 
+          div.collapse.navbar-collapse#navbarid
+            ul.navbar-nav.text-center.ml-auto 
+              li.nav-item
+                a.active.nav-link(href="#") Home
+              li.nav-item
+                a.nav-link(href="#") About Us
+              li.nav-item
+                a.nav-link(href="#") Contact
+              li.nav-item
+                a.nav-link(href="#") Login/signup
+      div#home
+        div.landing-txt
+          h1 BOOTSTRAP
+          h3 Learn the basic building blocks
+          a.btn.btn-outline-warning(href='#') Get Started
+      div.padding 
+        div.container 
+          div.row 
+            div.col-sm-6
+              img(src='../static/img/courosel_5.jpg')
+            div.col-sm-6.text-center
+              h2 Allbout using Bootstrap
+              p.lead Lorem ipsum dolor sit amet consectetur adipisicing elit. In laborum voluptas esse vero natus voluptates officia, ad aliquid aut dicta a, autem, quibusdam provident! Ex fuga perspiciatis adipisci cumque neque!
+              p.lead Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus recusandae amet cupiditate vel minima, inventore praesentium, voluptatem pariatur maiores obcaecati quidem repellat eius, quis cum! Officia veritatis iste ab! Atque?
+      div.padding
+        div.container
+          div.row
+            div.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              h4 Built with sass
+              p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, veniam tenetur veritatis repudiandae vero, aut totam repellendus eaque ad, delectus consequatur deserunt ipsam sunt alias. Labore neque alias harum sed.    
+            div.col-lg-3.col-md-3.col-sm-6.col-xs-12
+             img.img-responsive(href="#" src="../static/img/courosel_1.jpg")
+            div.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              h4 Built with sass
+              p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, veniam tenetur veritatis repudiandae vero, aut totam repellendus eaque ad, delectus consequatur deserunt ipsam sunt alias. Labore neque alias harum sed.  
+            div.col-lg-3.col-md-3.col-sm-6.col-xs-12
+             img.img-responsive(href="#" src="../static/img/courosel_1.jpg")
+      div#fixed
+        div
+      div.padding 
+        div.container 
+          div.row 
+            div.col-sm-6.text-center
+              h4 Here is the thing about bootstrap
+              p.lead Lorem ipsum dolor sit amet consectetur adipisicing elit. In laborum voluptas esse vero natus voluptates officia, ad aliquid aut dicta a, autem, quibusdam provident! Ex fuga perspiciatis adipisci cumque neque!
+              p.lead Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus recusandae amet cupiditate vel minima, inventore praesentium, voluptatem pariatur maiores obcaecati quidem repellat eius, quis cum! Officia veritatis iste ab! Atque?
+              p.lead Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus recusandae amet cupiditate vel minima, inventore praesentium, voluptatem pariatur maiores obcaecati quidem repellat eius, quis cum! Officia veritatis iste ab! Atque?
+            div.col-sm-6
+              img(src='../static/img/courosel_5.jpg')
+      footer.container-fluid.text-center
+        div.row 
+          div.col-sm-4
+            h3 Contact us 
+            h4 our address here
+          div.col-sm-4
+            h3 our social network
+            a.fa.fa-facebook(href="#")
+          div.col-sm-4
+            img.icon(src="../static/img/logo.png")
+
